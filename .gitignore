@@ -1,6 +1,4 @@
 .env
-bundle.js
-/dist
-/bundled
+# /dist
 /node_modules
 /.parcel-cache
