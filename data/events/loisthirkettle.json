@@ -1,0 +1,113 @@
+[
+  {
+    "id": "disscornhall",
+    "title": "Diss Corn Hall Gallery",
+    "date": "2019-03-01",
+    "dateEnd": "2019-04-03",
+    "when": "Mar 01 - Apr 03",
+    "description": "Showcasing some of the finest regional ceramicists of East Anglia, working in collaboration with DesignerMakers21, the Corn Hall is pleased to announce its first exhibition dedicated to ceramics. The exhibition will include both functional and cutting-edge contemporary design, as well as a selection of studio pottery featuring work by Lucie Rie and Bernard Leach.",
+    "googleMaps": { "query": "place_id:ChIJgSeqVJPA2UcR6rhjP2xelcc", "zoom": 15 }
+  },
+  {
+    "id": "designermakers21",
+    "title": "Designer makers 21, Diss. Ceramics in Action",
+    "date": "2019-03-23",
+    "dateEnd": "2019-03-23",
+    "when": "Sat 23 March 11am-4pm",
+    "description": "Join us for a day of demonstrations, \u2018Breaking the Mould\u2018 exhibition and related activities.",
+    "links": ["http://www.designermakers21.co.uk"],
+    "googleMaps": { "query": "place_id:ChIJgSeqVJPA2UcR6rhjP2xelcc", "zoom": 15 }
+  },
+  {
+    "id": "elyfooddrinkfestival",
+    "title": "Ely Food & Drink Festival",
+    "date": "2019-05-05",
+    "dateEnd": "2019-05-06",
+    "when": "May 05 - 06",
+    "description": "Located on Palace Green, in the shadow of the magnificent Ely Cathedral, at the very heart of this historic city, there are over 75 artisan food and drink traders, an expansive street food scene and amazing celebrity chefs plus of course crafts!",
+    "links": ["http://www.elyeelfestival.co.uk/foodanddrink/"],
+    "googleMaps": { "query": "place_id:ChIJjTzHfQwT2EcRr-Yl3BQS6sA", "zoom": 14 }
+  },
+  {
+    "id": "walberswickvillagehall",
+    "title": "Walberswick village hall",
+    "date": "2019-07-27",
+    "dateEnd": "2019-07-29",
+    "when": "July 27 \u2013 29",
+    "summary": "35 Anglian Potters demonstrating and selling their work in Walberswick Village Hall",
+    "description": "A great opportunity to 'be beside the seaside'. It is next to the Anchor and pretty village green and only 400 meters from the Bell and the sea. A great time was had by all in previous years so see you there this year.",
+    "links": ["http://walberswick.onesuffolk.net/village-hall/"],
+    "googleMaps": { "query": "place_id:ChIJOXyjPJYh2kcRX8oXc3qhw7E", "zoom": 10 }
+  },
+  {
+    "id": "folkeast",
+    "title": "Folk East",
+    "date": "2019-08-16",
+    "dateEnd": "2019-08-18",
+    "when": "Aug 16 \u2013 18",
+    "summary": "An amazing festival of Folk Music, Dancing, local Food and Drink, Crafts plus much more!",
+    "description": "'Suffused with good vibrations, quirky, charming, and possessed of a joie de vivre...'. I will be here at this beautiful festival along with other local potters. Have a go at throwing a pot! or simply come and browse our work. Glemham Hall Grounds, Suffolk",
+    "links": ["https://folkeast.co.uk"],
+    "googleMaps": { "query": "place_id:ChIJa8kwwIeF2UcRS2O0kQXSrns", "zoom": 11 }
+  },
+  {
+    "id": "artonthepromfelixstowe",
+    "title": "Art on the Prom",
+    "date": "2019-09-01",
+    "dateEnd": "2019-09-01",
+    "when": "Sep 1",
+    "summary": "Felixstowe's Yearly Festival of Artwork",
+    "description": "Hand crafted pottery, paintings, glass work and much much more. Art on the Prom is a free community event organised by a small group of volunteers, taking place on Felixstowe's sea front.",
+    "links": ["http://www.artontheprom.org"],
+    "googleMaps": { "query": "place_id:ChIJ6Zlx9dd52UcRiemW9nrqtoQ", "zoom": 15 }
+  },
+  {
+    "id": "wimpolehall",
+    "title": "Craft and Produce Fair",
+    "date": "2019-09-01",
+    "dateEnd": "2019-09-01",
+    "when": "Sep 8 - 9 TBC",
+    "summary": "Wimpole Hall, nr Royston, Cambrigeshire",
+    "description": "A working National Trust estate with an impressive mansion, home farm, park land, and rare breeds etc"
+  },
+  {
+    "id": "ickworthwoodfair",
+    "title": "Ickworth Wood Fair",
+    "date": "2019-10-05",
+    "dateEnd": "2019-10-07",
+    "when": "Oct 5 \u2013 7 TBC",
+    "summary": "Live bands, locally brewed ales, pottery tent with Raku, local crafts and activities",
+    "description": "The annual wood fair (started after the 1987 hurricane when so many trees on the estate were blown down) at Ickworth House near Bury St Edmunds. Live bands, locally brewed ales, pottery tent with Raku and many more local crafts and activities. 'A wonderful weekend of fun you \"woodn't\" want to miss!'",
+    "googleMaps": { "query": "place_id:ChIJN_l8z2dO2EcRQPWnHwz1Ldc", "zoom": 12 }
+  },
+  {
+    "id": "elycathedralxmasfair",
+    "title": "Ely Cathedral",
+    "date": "2019-11-13",
+    "dateEnd": "2019-11-16",
+    "when": "Nov 13 \u2013 16 TBC",
+    "summary": "Christmas Gift and Food fair",
+    "description": "Ely is among the marvels of the medieval world. Much of this beautiful cathedral is over 900 years old and it offers a rich architectural history, including the sumptuous 13th century Quire and beautiful 14th century Lady Chapel.",
+    "googleMaps": { "query": "place_id:ChIJjTzHfQwT2EcRr-Yl3BQS6sA", "zoom": 14 }
+  },
+  {
+    "id": "woodbridgestreetxmasfair",
+    "title": "Woodbridge",
+    "date": "2019-12-02",
+    "dateEnd": "2019-12-02",
+    "when": "TBC",
+    "summary": "Woodbridge Christmas Street Fair",
+    "description": "Stalls line the bustling thoroughfare and Cumberland Street with a superb range of gifts, produce and crafts. A really festive occasion in the heart of this very pretty town.",
+    "googleMaps": { "query": "place_id:ChIJteQBqIec2UcRZb5MD3caOZs", "zoom": 14 }
+  },
+  {
+    "id": "blackthorpebarns",
+    "title": "Blackthorpe Barns",
+    "date": "2019-12-07",
+    "dateEnd": "2019-12-15",
+    "when": "14 - 15",
+    "summary": "British Crafts in a medieval barn near Bury St Edmunds",
+    "description": "The best of British hand made crafts in a medieval barn on the Rougham Estate close to Bury St Edmunds. One of the highest profile pre christmas craft fairs there are more than 60 exhibitors. There are lots of things to do all day for all ages and easy parking.",
+    "googleMaps": { "query": "Blackthorpe%20Barns", "zoom": 12 }
+  }
+]

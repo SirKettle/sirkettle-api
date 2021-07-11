@@ -1,0 +1,6 @@
+.env
+bundle.js
+/dist
+/bundled
+/node_modules
+/.parcel-cache
