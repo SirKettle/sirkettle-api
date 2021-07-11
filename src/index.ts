@@ -3,8 +3,10 @@ import https from 'https';
 import fs from 'fs';
 import app from './app';
 
-const server = app.listen(app.get('port'), () => {
-  console.log(chalk.green(`✅ App is running on http://localhost:${app.get('port')} in ${app.get('env')} mode`));
+const port = process.env.PORT || 4000;
+
+const server = app.listen(port, () => {
+  console.log(chalk.green(`✅ App is running on http://localhost:${port} in ${app.get('env')} mode`));
 });
 
 // Set up express server here
