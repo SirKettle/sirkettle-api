@@ -29,7 +29,17 @@ export interface IDecoratedTweet {
   url?: string | null;
   hashTags: string[];
   images: IMedia[];
-  raw: IRawTweet;
+  raw?: IRawTweet;
+}
+
+export interface IErrorResponse {
+  error: unknown;
+}
+
+export interface IUserTweetsResponse {
+  tweetCount: number;
+  twitterUserId: string;
+  data: IDecoratedTweet[];
 }
 
 /**
