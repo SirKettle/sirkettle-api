@@ -1,15 +1,9 @@
 import fetch from 'node-fetch';
 import type { Request, Response } from 'express';
 import { intOr } from '../utils/number';
-import {
-  IBlogPostsResponse,
-  IErrorResponse,
-  IImage,
-  IRawTumblrImage,
-  ITumblrPost,
-  ITumblrPostsResponse,
-  IVideo,
-} from './types';
+import { IRawTumblrImage, ITumblrPost, ITumblrPostsResponse } from './types';
+import { IVideo, IImage, IErrorResponse, IPost, IBlogPostsResponse } from '../types';
+import { getUserTweets } from '../twitter';
 
 const userApiKey = (userId: string) =>
   ({
@@ -55,7 +49,7 @@ const getImageFromBody = ({ body }: ITumblrPost): IImage | null => {
       const imgAttrStr = body.split('<img')[1].split('/>')[0];
       const imgAttrKeys = ['src', 'data-orig-width', 'data-orig-height'];
       const raw: IRawTumblrImage = imgAttrKeys.reduce((acc, key) => {
-        const search = ` ${key}="`;
+        const search: string = ` ${key}="`;
         const value = imgAttrStr.split(search)[1]?.split('" ')[0];
         return {
           ...acc,
@@ -81,7 +75,7 @@ const getPosts = async (req: Request): Promise<IBlogPostsResponse | IErrorRespon
   const postCount = intOr(req.query.count, 30);
   const maxPostsLimit = 20; // tumblr ony sends max 20
   const pagesCount = Math.ceil(postCount / maxPostsLimit);
-  const userId = req.params.userId;
+  const userId = req.params.userId || `${req.query.tumblr_id || ''}`;
   const apiKey = userApiKey(userId);
 
   try {
@@ -112,7 +106,8 @@ const getPosts = async (req: Request): Promise<IBlogPostsResponse | IErrorRespon
         };
       }
 
-      result.userName = json.response.blog.name;
+      result.userName = userId;
+      result.tumblrUserId = userId;
       result.data = [
         ...result.data,
         ...json.response.posts.map((p) => {
@@ -129,6 +124,7 @@ const getPosts = async (req: Request): Promise<IBlogPostsResponse | IErrorRespon
         }),
       ];
       result.count = result.data.length;
+      result.tumblrPostsCount = result.data.length;
       page += 1;
     }
 
@@ -140,22 +136,78 @@ const getPosts = async (req: Request): Promise<IBlogPostsResponse | IErrorRespon
   }
 };
 
-// export const getBlogPosts = async (req: Request, res: Response<IUserTweetsResponse | IErrorResponse>) => {
-export const getBlogPosts = async (req: Request, res: Response<IBlogPostsResponse | IErrorResponse>) => {
-  const handleError = (error: unknown, status = 500) => {
-    res.status(status);
-    res.send({
-      error,
-    });
-  };
-
-  try {
-    const result = await getPosts(req);
+export const getBlogPostsRequest = async (req: Request, res: Response<IBlogPostsResponse | IErrorResponse>) => {
+  const handleResult = (result: IBlogPostsResponse | IErrorResponse) => {
     if (result?.status >= 400) {
       res.status(result?.status);
     }
     res.send(result);
+  };
+
+  try {
+    const result = await getPosts(req);
+    handleResult(result);
   } catch (e) {
-    handleError(e);
+    handleResult({
+      error: e,
+      status: 500,
+    });
+  }
+};
+
+const sortByLatest = (a: IPost, b: IPost) => (a.createdAtIso < b.createdAtIso ? 1 : -1);
+
+const isBlogPostsResponse = (test: unknown): test is IBlogPostsResponse => {
+  if (typeof test !== 'object') {
+    return false;
+  }
+  if ((test as IBlogPostsResponse).data) {
+    return Array.isArray((test as IBlogPostsResponse).data);
+  }
+  return false;
+};
+
+export const getPostsAndTweetsRequest = async (req: Request, res: Response<IBlogPostsResponse | IErrorResponse>) => {
+  const handleResult = (result: IBlogPostsResponse | IErrorResponse) => {
+    if (result?.status >= 400) {
+      res.status(result?.status);
+    }
+    res.send(result);
+  };
+
+  try {
+    const blogPosts = await getPosts(req);
+    const tweets = await getUserTweets(req);
+    const result: IBlogPostsResponse = {
+      count: 0,
+      userName: [req.query.tumblr_id, req.query.twitter_id].filter(Boolean).join(','),
+      data: [],
+    };
+
+    if (isBlogPostsResponse(blogPosts)) {
+      result.tumblrUserId = blogPosts.tumblrUserId;
+      result.tumblrPostsCount = blogPosts.tumblrPostsCount;
+      result.data = [...result.data, ...blogPosts.data].sort(sortByLatest);
+    }
+    if (isBlogPostsResponse(tweets)) {
+      result.twitterUserId = tweets.twitterUserId;
+      result.tweetCount = tweets.count;
+      result.data = [...result.data, ...tweets.data].sort(sortByLatest);
+    }
+
+    const maxPosts = intOr(req.query.count, Infinity);
+
+    if (result.data.length > maxPosts) {
+      result.data = result.data.slice(0, maxPosts);
+    }
+
+    result.count = result.data.length;
+
+    handleResult(result);
+  } catch (e) {
+    handleResult({
+      error: e,
+      status: 500,
+    });
   }
 };

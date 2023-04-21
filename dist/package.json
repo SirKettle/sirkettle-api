@@ -2,7 +2,7 @@
     "name": "sirkettle-api",
     "version": "1.0.0",
     "description": "node server running on heroku",
-    "main": "dist/index.js",
+    "main": "dist/src/index.js",
     "scripts": {
         "test": "npx jest --watch",
         "clean": "rm -rf ./dist",

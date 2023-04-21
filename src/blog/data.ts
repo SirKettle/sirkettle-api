@@ -1,4 +1,4 @@
-import { IBlogPostsResponse, ITumblrPostsResponse } from './types';
+import { IBlogPostsResponse } from '../types';
 
 export const exampleBlogPostsHJThirkettle: IBlogPostsResponse = {
   userName: 'hjthirkettle',

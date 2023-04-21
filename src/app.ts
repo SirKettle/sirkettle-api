@@ -7,7 +7,7 @@ import pkg from '../package.json';
 import * as events from './events';
 import * as ipAddress from './ipAddress';
 import * as twitter from './twitter';
-import * as tumblr from './tumblr';
+import * as blog from './blog';
 import { isOriginAllowed } from './utils/cors';
 import { getRandomPie } from './random';
 
@@ -65,8 +65,9 @@ app.get('/', (req, res) => {
 });
 app.get('/ipv4', ipAddress.getPublicV4);
 
-app.get('/blog/posts/:userId', tumblr.getBlogPosts);
-app.get('/twitter/tweets/:userId', twitter.getUserTweets);
+app.get('/blog/posts-and-tweets', blog.getPostsAndTweetsRequest);
+app.get('/blog/posts/:userId', blog.getBlogPostsRequest);
+app.get('/twitter/tweets/:userId', twitter.getUserTweetsRequest);
 app.get('/twitter/legacy-tweets/:userId', twitter.getUserTweetsLegacy);
 app.get('/twitter/legacy-tweets', twitter.getUserTweetsLegacy);
 app.get('/events/:appId', events.getAppEvents);

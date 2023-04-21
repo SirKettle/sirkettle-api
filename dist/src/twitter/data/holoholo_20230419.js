@@ -3,8 +3,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.holoholoTweetData = void 0;
 // snapshot of holohol97642100 tweets on 2023-04-19 before Mr Musk shuts things down
 exports.holoholoTweetData = {
-    tweetCount: 15,
-    twitterUserId: 'holohol97642100',
+    count: 15,
+    userName: 'holohol97642100',
     data: [
         {
             createdAtIso: '2023-03-11T07:15:21.000Z',
@@ -19,6 +19,7 @@ exports.holoholoTweetData = {
                     height: 680,
                 },
             ],
+            videos: [],
         },
         {
             createdAtIso: '2023-02-21T17:45:11.000Z',
@@ -33,6 +34,7 @@ exports.holoholoTweetData = {
                     height: 680,
                 },
             ],
+            videos: [],
         },
         {
             createdAtIso: '2023-02-20T20:00:19.000Z',
@@ -47,6 +49,7 @@ exports.holoholoTweetData = {
                     height: 510,
                 },
             ],
+            videos: [],
         },
         {
             createdAtIso: '2023-02-18T16:16:38.000Z',
@@ -61,6 +64,7 @@ exports.holoholoTweetData = {
                     height: 495,
                 },
             ],
+            videos: [],
         },
         {
             createdAtIso: '2022-09-27T20:09:22.000Z',
@@ -68,6 +72,7 @@ exports.holoholoTweetData = {
             url: 'https://t.co/RfSoGBJykz',
             hashTags: [],
             images: [],
+            videos: [],
         },
         {
             createdAtIso: '2022-09-26T17:58:17.000Z',
@@ -82,6 +87,7 @@ exports.holoholoTweetData = {
                     height: 680,
                 },
             ],
+            videos: [],
         },
         {
             createdAtIso: '2022-09-16T20:09:19.000Z',
@@ -96,6 +102,7 @@ exports.holoholoTweetData = {
                     height: 680,
                 },
             ],
+            videos: [],
         },
         {
             createdAtIso: '2022-09-15T21:43:28.000Z',
@@ -110,6 +117,7 @@ exports.holoholoTweetData = {
                     height: 534,
                 },
             ],
+            videos: [],
         },
         {
             createdAtIso: '2022-09-12T15:39:48.000Z',
@@ -117,6 +125,7 @@ exports.holoholoTweetData = {
             url: 'https://t.co/20B7h6waGt',
             hashTags: [],
             images: [],
+            videos: [],
         },
         {
             createdAtIso: '2022-09-08T19:12:32.000Z',
@@ -131,6 +140,7 @@ exports.holoholoTweetData = {
                     height: 385,
                 },
             ],
+            videos: [],
         },
         {
             createdAtIso: '2022-07-25T20:31:33.000Z',
@@ -145,6 +155,7 @@ exports.holoholoTweetData = {
                     height: 680,
                 },
             ],
+            videos: [],
         },
         {
             createdAtIso: '2022-07-06T19:19:40.000Z',
@@ -152,6 +163,7 @@ exports.holoholoTweetData = {
             url: 'https://t.co/AEpZQDJGkb',
             hashTags: [],
             images: [],
+            videos: [],
         },
         {
             createdAtIso: '2022-07-06T07:58:29.000Z',
@@ -166,6 +178,7 @@ exports.holoholoTweetData = {
                     height: 510,
                 },
             ],
+            videos: [],
         },
         {
             createdAtIso: '2022-07-05T18:29:39.000Z',
@@ -173,6 +186,7 @@ exports.holoholoTweetData = {
             url: 'https://t.co/C5SF4qNcwn',
             hashTags: [],
             images: [],
+            videos: [],
         },
         {
             createdAtIso: '2022-07-04T19:53:54.000Z',
@@ -187,6 +201,7 @@ exports.holoholoTweetData = {
                     height: 383,
                 },
             ],
+            videos: [],
         },
     ],
 };

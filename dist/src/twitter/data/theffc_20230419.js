@@ -3,14 +3,15 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.theffcTweetData = void 0;
 // snapshot of ffc_the tweets on 2023-04-19 before Mr Musk shuts things down
 exports.theffcTweetData = {
-    tweetCount: 30,
-    twitterUserId: 'ffc_the',
+    count: 30,
+    userName: 'ffc_the',
     data: [
         {
             createdAtIso: '2023-03-08T07:00:51.000Z',
             text: '#bespoke #living',
             url: 'https://t.co/P3To3M6uT4',
             hashTags: ['bespoke', 'living'],
+            videos: [],
             images: [
                 {
                     src: 'http://pbs.twimg.com/media/FqreMCSXoAAtQNj.jpg',
@@ -37,6 +38,7 @@ exports.theffcTweetData = {
             text: '#kitchen',
             url: 'https://t.co/3Bptvvtzxn',
             hashTags: ['kitchen'],
+            videos: [],
             images: [
                 {
                     src: 'http://pbs.twimg.com/media/FlzGdKkWAAELK3u.jpg',
@@ -51,6 +53,7 @@ exports.theffcTweetData = {
             text: '#bespoke',
             url: 'https://t.co/TaRjLy68Eg',
             hashTags: ['bespoke'],
+            videos: [],
             images: [
                 {
                     src: 'http://pbs.twimg.com/media/FkqUxowWAAEUr9_.jpg',
@@ -71,6 +74,7 @@ exports.theffcTweetData = {
             text: '#living',
             url: 'https://t.co/DLlE3I9j8B',
             hashTags: ['living'],
+            videos: [],
             images: [
                 {
                     src: 'http://pbs.twimg.com/media/FkqUil7XwAEJEvf.jpg',
@@ -97,6 +101,7 @@ exports.theffcTweetData = {
             text: '#bespoke',
             url: 'https://t.co/8S8pAswtWK',
             hashTags: ['bespoke'],
+            videos: [],
             images: [
                 {
                     src: 'http://pbs.twimg.com/media/FkqTzzYWIAIXf1T.jpg',
@@ -111,6 +116,7 @@ exports.theffcTweetData = {
             text: '#kitchens',
             url: 'https://t.co/TpC8rnatIE',
             hashTags: ['kitchens'],
+            videos: [],
             images: [
                 {
                     src: 'http://pbs.twimg.com/media/FkqTfTAXoAQHKKi.jpg',
@@ -137,6 +143,7 @@ exports.theffcTweetData = {
             text: '#kitchens',
             url: 'https://t.co/NpzgWGDYW3',
             hashTags: ['kitchens'],
+            videos: [],
             images: [
                 {
                     src: 'http://pbs.twimg.com/media/FkqTIIsXkAoHPzn.jpg',
@@ -169,6 +176,7 @@ exports.theffcTweetData = {
             text: '#kitchens',
             url: 'https://t.co/WYL0uaqD71',
             hashTags: ['kitchens'],
+            videos: [],
             images: [
                 {
                     src: 'http://pbs.twimg.com/media/FkqSpvKWIAAt35l.jpg',
@@ -201,6 +209,7 @@ exports.theffcTweetData = {
             text: '#living #bespoke',
             url: 'https://t.co/3NUReD3oi4',
             hashTags: ['living', 'bespoke'],
+            videos: [],
             images: [
                 {
                     src: 'http://pbs.twimg.com/media/Fkp-ZTMWQAEAvm3.jpg',
@@ -215,6 +224,7 @@ exports.theffcTweetData = {
             text: '#living #bespoke',
             url: 'https://t.co/TkcfLusX1E',
             hashTags: ['living', 'bespoke'],
+            videos: [],
             images: [
                 {
                     src: 'http://pbs.twimg.com/media/FVaIRkKXoAAPVjj.jpg',
@@ -229,6 +239,7 @@ exports.theffcTweetData = {
             text: '#bedroom #bespoke',
             url: 'https://t.co/ojBR86mcLb',
             hashTags: ['bedroom', 'bespoke'],
+            videos: [],
             images: [
                 {
                     src: 'http://pbs.twimg.com/media/FVaH84aXoBA2c3h.jpg',
@@ -243,6 +254,7 @@ exports.theffcTweetData = {
             text: '#bespoke #living',
             url: 'https://t.co/gsItCsvcgd',
             hashTags: ['bespoke', 'living'],
+            videos: [],
             images: [
                 {
                     src: 'http://pbs.twimg.com/media/FVaHwdTWIAESaYq.jpg',
@@ -257,6 +269,7 @@ exports.theffcTweetData = {
             text: '#living',
             url: 'https://t.co/SkSZF95MbM',
             hashTags: ['living'],
+            videos: [],
             images: [
                 {
                     src: 'http://pbs.twimg.com/media/FQFhvKkXMAgLdwe.jpg',
@@ -271,6 +284,7 @@ exports.theffcTweetData = {
             text: '#kitchen',
             url: 'https://t.co/JfRM3x80L5',
             hashTags: ['kitchen'],
+            videos: [],
             images: [
                 {
                     src: 'http://pbs.twimg.com/media/FJ8IuHKXIAI0VmQ.jpg',
@@ -291,6 +305,7 @@ exports.theffcTweetData = {
             text: '#bespoke',
             url: 'https://t.co/UQkMyf1cKB',
             hashTags: ['bespoke'],
+            videos: [],
             images: [
                 {
                     src: 'http://pbs.twimg.com/media/FJ8IgyCX0AE7vRf.jpg',
@@ -311,6 +326,7 @@ exports.theffcTweetData = {
             text: '#bedroom',
             url: 'https://t.co/SLHRIl8lac',
             hashTags: ['bedroom'],
+            videos: [],
             images: [
                 {
                     src: 'http://pbs.twimg.com/media/FIHli5MWYAQZsmd.jpg',
@@ -325,6 +341,7 @@ exports.theffcTweetData = {
             text: '#bedroom',
             url: 'https://t.co/HcDl9CvvIZ',
             hashTags: ['bedroom'],
+            videos: [],
             images: [
                 {
                     src: 'http://pbs.twimg.com/media/FIHleMGXMAIsdjx.jpg',
@@ -339,6 +356,7 @@ exports.theffcTweetData = {
             text: '#living #bespoke',
             url: 'https://t.co/YHsuYUBSlx',
             hashTags: ['living', 'bespoke'],
+            videos: [],
             images: [
                 {
                     src: 'http://pbs.twimg.com/media/FHuVdv3XEAoiG-q.jpg',
@@ -353,6 +371,7 @@ exports.theffcTweetData = {
             text: '#bespoke #living',
             url: 'https://t.co/s3gDHEKzbF',
             hashTags: ['bespoke', 'living'],
+            videos: [],
             images: [
                 {
                     src: 'http://pbs.twimg.com/media/FHt-WqzXMAQ1KZS.jpg',
@@ -373,6 +392,7 @@ exports.theffcTweetData = {
             text: '#living',
             url: 'https://t.co/fMgYig5ufJ',
             hashTags: ['living'],
+            videos: [],
             images: [
                 {
                     src: 'http://pbs.twimg.com/media/FCUEwMjWYAYPUs4.jpg',
@@ -387,6 +407,7 @@ exports.theffcTweetData = {
             text: '#bedroom',
             url: 'https://t.co/MmSHz3XZU0',
             hashTags: ['bedroom'],
+            videos: [],
             images: [
                 {
                     src: 'http://pbs.twimg.com/media/E8hpI5CXMAInOtp.jpg',
@@ -401,6 +422,7 @@ exports.theffcTweetData = {
             text: '#bespoke',
             url: 'https://t.co/CGWLMi717L',
             hashTags: ['bespoke'],
+            videos: [],
             images: [
                 {
                     src: 'http://pbs.twimg.com/media/E600hhRWYAYsQ4Y.jpg',
@@ -415,6 +437,7 @@ exports.theffcTweetData = {
             text: 'Cabin bed combo #bespoke #bedroom',
             url: 'https://t.co/czuk5VfuVW',
             hashTags: ['bespoke', 'bedroom'],
+            videos: [],
             images: [
                 {
                     src: 'http://pbs.twimg.com/media/E5IDzrdWQAcpkyD.jpg',
@@ -429,6 +452,7 @@ exports.theffcTweetData = {
             text: '#kitchens #living',
             url: 'https://t.co/82tZ2wLytc',
             hashTags: ['kitchens', 'living'],
+            videos: [],
             images: [
                 {
                     src: 'http://pbs.twimg.com/media/E45kXIpWEAITQ8V.jpg',
@@ -449,6 +473,7 @@ exports.theffcTweetData = {
             text: 'This vanity was made from solid American walnut , with hand turned walnut legs and a Carrara marble top #living #bespoke',
             url: 'https://t.co/GeeqPpHS92',
             hashTags: ['living', 'bespoke'],
+            videos: [],
             images: [
                 {
                     src: 'http://pbs.twimg.com/media/E4pWlJKWUAcdf_f.jpg',
@@ -469,6 +494,7 @@ exports.theffcTweetData = {
             text: 'A wonderful space and kitchen in Norwich #kitchen #bespoke',
             url: 'https://t.co/rRA4TR6922',
             hashTags: ['kitchen', 'bespoke'],
+            videos: [],
             images: [
                 {
                     src: 'http://pbs.twimg.com/media/E4pVjI_WUAY6xdi.jpg',
@@ -483,6 +509,7 @@ exports.theffcTweetData = {
             text: '#living',
             url: 'https://t.co/1cxp7S7o6y',
             hashTags: ['living'],
+            videos: [],
             images: [
                 {
                     src: 'http://pbs.twimg.com/media/E03AzEWX0AAPt-e.jpg',
@@ -497,6 +524,7 @@ exports.theffcTweetData = {
             text: '#living',
             url: 'https://t.co/QuXKsMy36j',
             hashTags: ['living'],
+            videos: [],
             images: [
                 {
                     src: 'http://pbs.twimg.com/media/Et9kFAMWgAI50qm.jpg',
@@ -511,6 +539,7 @@ exports.theffcTweetData = {
             text: '#bespoke',
             url: 'https://t.co/1HuIdGIyGg',
             hashTags: ['bespoke'],
+            videos: [],
             images: [
                 {
                     src: 'http://pbs.twimg.com/media/Et9hr44XUAQmWcE.jpg',
@@ -525,6 +554,7 @@ exports.theffcTweetData = {
             text: '#living #bespoke',
             url: 'https://t.co/DS7CjWfjIw',
             hashTags: ['living', 'bespoke'],
+            videos: [],
             images: [
                 {
                     src: 'http://pbs.twimg.com/media/Et380VsXYAMEMlg.jpg',

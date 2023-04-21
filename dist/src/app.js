@@ -32,7 +32,7 @@ var package_json_1 = __importDefault(require("../package.json"));
 var events = __importStar(require("./events"));
 var ipAddress = __importStar(require("./ipAddress"));
 var twitter = __importStar(require("./twitter"));
-var tumblr = __importStar(require("./tumblr"));
+var blog = __importStar(require("./blog"));
 var cors_2 = require("./utils/cors");
 var random_1 = require("./random");
 // dotenv variables now available
@@ -60,8 +60,9 @@ app.get('/', function (req, res) {
     res.send("\n    <html>\n      <head>\n      <title>" + package_json_1.default.name + "</title>\n      </head>\n      <body>\n        <h1>Available endpoints</h1>\n        <ul>\n          <li>GET " + exports.linkHtml('/pie') + " (returns a random, but always delicious, pie)</li>\n          <li>GET " + exports.linkHtml('/ipv4') + "</li>\n          <li>GET " + exports.linkHtml('/twitter/tweets/:userId', '/twitter/tweets/thirkettle?count=5') + "</li>\n          <li>GET " + exports.linkHtml('/twitter/legacy-tweets/:userId', '/twitter/legacy-tweets/thirkettle?count=5') + "</li>\n          <li>GET " + exports.linkHtml('/twitter/legacy-tweets', '/twitter/legacy-tweets?user=thirkettle&count=5') + " (requires a ?user=query)</li>\n          <li>GET " + exports.linkHtml('/events/:appId', '/events/loisthirkettle') + "</li>\n          <li>GET " + exports.linkHtml('/events/:appId/:eventId', '/events/loisthirkettle/designermakers21') + "</li>\n        </ul>\n      </body>\n    </html>\n  ");
 });
 app.get('/ipv4', ipAddress.getPublicV4);
-app.get('/blog/posts/:userId', tumblr.getBlogPosts);
-app.get('/twitter/tweets/:userId', twitter.getUserTweets);
+app.get('/blog/posts-and-tweets', blog.getPostsAndTweetsRequest);
+app.get('/blog/posts/:userId', blog.getBlogPostsRequest);
+app.get('/twitter/tweets/:userId', twitter.getUserTweetsRequest);
 app.get('/twitter/legacy-tweets/:userId', twitter.getUserTweetsLegacy);
 app.get('/twitter/legacy-tweets', twitter.getUserTweetsLegacy);
 app.get('/events/:appId', events.getAppEvents);

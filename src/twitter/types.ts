@@ -1,5 +1,7 @@
 // "Raw" types from twitter api
 
+import { IPost } from '../types';
+
 export interface IRawTweetMedia {
   media_url: string;
   media_url_https: string;
@@ -12,34 +14,6 @@ export interface IRawTweet {
   created_at: string;
   text?: string;
   full_text?: string;
-}
-
-// Custom types
-
-export interface IMedia {
-  src: string;
-  srcHttps: string;
-  width: number;
-  height: number;
-}
-
-export interface IDecoratedTweet {
-  createdAtIso: string;
-  text: string;
-  url?: string | null;
-  hashTags: string[];
-  images: IMedia[];
-  raw?: IRawTweet;
-}
-
-export interface IErrorResponse {
-  error: unknown;
-}
-
-export interface IUserTweetsResponse {
-  tweetCount: number;
-  twitterUserId: string;
-  data: IDecoratedTweet[];
 }
 
 /**

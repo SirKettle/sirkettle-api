@@ -55,9 +55,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getBlogPosts = void 0;
+exports.getPostsAndTweetsRequest = exports.getBlogPostsRequest = void 0;
 var node_fetch_1 = __importDefault(require("node-fetch"));
 var number_1 = require("../utils/number");
+var twitter_1 = require("../twitter");
 var userApiKey = function (userId) {
     return ({
         hjthirkettle: 'wZ76ugorKsu10IUwVRzRNT9KyyMkmJY6OV63wXsfHpBq4xIXIN',
@@ -134,7 +135,7 @@ var getPosts = function (req) { return __awaiter(void 0, void 0, void 0, functio
                 postCount = number_1.intOr(req.query.count, 30);
                 maxPostsLimit = 20;
                 pagesCount = Math.ceil(postCount / maxPostsLimit);
-                userId = req.params.userId;
+                userId = req.params.userId || "" + (req.query.tumblr_id || '');
                 apiKey = userApiKey(userId);
                 _c.label = 1;
             case 1:
@@ -164,7 +165,8 @@ var getPosts = function (req) { return __awaiter(void 0, void 0, void 0, functio
                             status: (_b = json === null || json === void 0 ? void 0 : json.meta) === null || _b === void 0 ? void 0 : _b.status,
                         }];
                 }
-                result.userName = json.response.blog.name;
+                result.userName = userId;
+                result.tumblrUserId = userId;
                 result.data = __spreadArray(__spreadArray([], result.data), json.response.posts.map(function (p) {
                     console.log(p);
                     console.log(JSON.stringify(p));
@@ -178,6 +180,7 @@ var getPosts = function (req) { return __awaiter(void 0, void 0, void 0, functio
                     };
                 }));
                 result.count = result.data.length;
+                result.tumblrPostsCount = result.data.length;
                 page += 1;
                 return [3 /*break*/, 2];
             case 5: return [2 /*return*/, result];
@@ -190,18 +193,16 @@ var getPosts = function (req) { return __awaiter(void 0, void 0, void 0, functio
         }
     });
 }); };
-// export const getBlogPosts = async (req: Request, res: Response<IUserTweetsResponse | IErrorResponse>) => {
-var getBlogPosts = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
-    var handleError, result, e_2;
+var getBlogPostsRequest = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+    var handleResult, result, e_2;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
-                handleError = function (error, status) {
-                    if (status === void 0) { status = 500; }
-                    res.status(status);
-                    res.send({
-                        error: error,
-                    });
+                handleResult = function (result) {
+                    if ((result === null || result === void 0 ? void 0 : result.status) >= 400) {
+                        res.status(result === null || result === void 0 ? void 0 : result.status);
+                    }
+                    res.send(result);
                 };
                 _a.label = 1;
             case 1:
@@ -209,18 +210,82 @@ var getBlogPosts = function (req, res) { return __awaiter(void 0, void 0, void 0
                 return [4 /*yield*/, getPosts(req)];
             case 2:
                 result = _a.sent();
-                if ((result === null || result === void 0 ? void 0 : result.status) >= 400) {
-                    res.status(result === null || result === void 0 ? void 0 : result.status);
-                }
-                res.send(result);
+                handleResult(result);
                 return [3 /*break*/, 4];
             case 3:
                 e_2 = _a.sent();
-                handleError(e_2);
+                handleResult({
+                    error: e_2,
+                    status: 500,
+                });
                 return [3 /*break*/, 4];
             case 4: return [2 /*return*/];
         }
     });
 }); };
-exports.getBlogPosts = getBlogPosts;
+exports.getBlogPostsRequest = getBlogPostsRequest;
+var sortByLatest = function (a, b) { return (a.createdAtIso < b.createdAtIso ? 1 : -1); };
+var isBlogPostsResponse = function (test) {
+    if (typeof test !== 'object') {
+        return false;
+    }
+    if (test.data) {
+        return Array.isArray(test.data);
+    }
+    return false;
+};
+var getPostsAndTweetsRequest = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+    var handleResult, blogPosts, tweets, result, maxPosts, e_3;
+    return __generator(this, function (_a) {
+        switch (_a.label) {
+            case 0:
+                handleResult = function (result) {
+                    if ((result === null || result === void 0 ? void 0 : result.status) >= 400) {
+                        res.status(result === null || result === void 0 ? void 0 : result.status);
+                    }
+                    res.send(result);
+                };
+                _a.label = 1;
+            case 1:
+                _a.trys.push([1, 4, , 5]);
+                return [4 /*yield*/, getPosts(req)];
+            case 2:
+                blogPosts = _a.sent();
+                return [4 /*yield*/, twitter_1.getUserTweets(req)];
+            case 3:
+                tweets = _a.sent();
+                result = {
+                    count: 0,
+                    userName: [req.query.tumblr_id, req.query.twitter_id].filter(Boolean).join(','),
+                    data: [],
+                };
+                if (isBlogPostsResponse(blogPosts)) {
+                    result.tumblrUserId = blogPosts.tumblrUserId;
+                    result.tumblrPostsCount = blogPosts.tumblrPostsCount;
+                    result.data = __spreadArray(__spreadArray([], result.data), blogPosts.data).sort(sortByLatest);
+                }
+                if (isBlogPostsResponse(tweets)) {
+                    result.twitterUserId = tweets.twitterUserId;
+                    result.tweetCount = tweets.count;
+                    result.data = __spreadArray(__spreadArray([], result.data), tweets.data).sort(sortByLatest);
+                }
+                maxPosts = number_1.intOr(req.query.count, Infinity);
+                if (result.data.length > maxPosts) {
+                    result.data = result.data.slice(0, maxPosts);
+                }
+                result.count = result.data.length;
+                handleResult(result);
+                return [3 /*break*/, 5];
+            case 4:
+                e_3 = _a.sent();
+                handleResult({
+                    error: e_3,
+                    status: 500,
+                });
+                return [3 /*break*/, 5];
+            case 5: return [2 /*return*/];
+        }
+    });
+}); };
+exports.getPostsAndTweetsRequest = getPostsAndTweetsRequest;
 //# sourceMappingURL=index.js.map
