@@ -4,6 +4,8 @@ import { IBlogPostsResponse } from '../../types';
 export const holoholoTweetData: IBlogPostsResponse = {
   count: 15,
   userName: 'holohol97642100',
+  tweetCount: 15,
+  twitterUserId: 'holohol97642100',
   data: [
     {
       createdAtIso: '2023-03-11T07:15:21.000Z',

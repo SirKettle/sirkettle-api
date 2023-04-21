@@ -4,6 +4,8 @@ import { IBlogPostsResponse } from '../../types';
 export const theffcTweetData: IBlogPostsResponse = {
   count: 30,
   userName: 'ffc_the',
+  tweetCount: 30,
+  twitterUserId: 'ffc_the',
   data: [
     {
       createdAtIso: '2023-03-08T07:00:51.000Z',
