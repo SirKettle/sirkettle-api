@@ -50,18 +50,18 @@ app.get('/', (req, res) => {
         <ul>
           <li>GET ${linkHtml('/pie')} (returns a random, but always delicious, pie)</li>
           <li>GET ${linkHtml('/ipv4')}</li>
-          <li>GET ${linkHtml('/twitter/tweets/:userId', '/twitter/tweets/thirkettle?count=5')}</li>
-          <li>GET ${linkHtml('/twitter/legacy-tweets/:userId', '/twitter/legacy-tweets/thirkettle?count=5')}</li>
+          <li>GET ${linkHtml('/twitter/tweets/:userId', '/twitter/tweets/ffc_the?count=5')}</li>
+          <li>GET ${linkHtml('/twitter/legacy-tweets/:userId', '/twitter/legacy-tweets/ffc_the?count=5')}</li>
           <li>GET ${linkHtml(
             '/twitter/legacy-tweets',
-            '/twitter/legacy-tweets?user=thirkettle&count=5'
+            '/twitter/legacy-tweets?user=ffc_the&count=5'
           )} (requires a ?user=query)</li>
           <li>GET ${linkHtml('/events/:appId', '/events/loisthirkettle')}</li>
           <li>GET ${linkHtml('/events/:appId/:eventId', '/events/loisthirkettle/designermakers21')}</li>
           <li>GET ${linkHtml('/events/:appId/:eventId', '/events/loisthirkettle/designermakers21')}</li>
           <li>GET ${linkHtml(
             '/blog/posts-and-tweets',
-            '/blog/posts-and-tweet?tumblr_id=sirkettle&twitter_id=thirkettle'
+            '/blog/posts-and-tweets?tumblr_id=thefittedfurnitureco&twitter_id=ffc_the'
           )}</li>
           <li>GET ${linkHtml('/blog/posts/:userId', '/blog/posts/sirkettle?type=photo&count=2')}</li>
         </ul>
