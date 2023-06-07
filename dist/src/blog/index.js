@@ -64,6 +64,7 @@ var userApiKey = function (userId) {
         hjthirkettle: 'wZ76ugorKsu10IUwVRzRNT9KyyMkmJY6OV63wXsfHpBq4xIXIN',
         thirkettle: 'vmNUaWxCt9rGA83Jk5x0S4Mh7kqpDkBKM6t8HESW1CT7AVP5xr',
         sirkettle: 'vmNUaWxCt9rGA83Jk5x0S4Mh7kqpDkBKM6t8HESW1CT7AVP5xr',
+        thefittedfurnitureco: 'QRs0zRM8RYtfElH5NwCwjfDuICbwtVLU3QKgNxruioXxX17vXw',
     }[userId] || '');
 };
 var getVideoFromBody = function (_a) {
